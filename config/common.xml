@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<dmzFileCacheLocal>
+   <path value="../../assets/ioRaceway/textures"/>
+   <path value="../../assets/models/"/>
+   <path value="../dmz/scripts/entity"/>
+</dmzFileCacheLocal>
+<plugins>
+   <plugin name="dmzArchiveModuleBasic"/>
+   <plugin name="dmzArchivePluginAutoLoad"/>
+   <plugin name="dmzArchivePluginQuickSave"/>
+   <plugin name="dmzObjectPluginArchive"/>
+   <plugin name="dmzObjectModuleBasic"/>
+   <!-- <plugin name="dmzObjectPluginDump"/> -->
+   <!-- <plugin name="dmzPluginTermExit"/> -->
+</plugins>
+<dmzObjectPluginArchive>
+   <archive>
+      <attribute name="Last_Network_Value" contains="True"/>
+   </archive>
+</dmzObjectPluginArchive>
+</dmz>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dmz>
+   <plugins>
+      <plugin name="dmzRenderModuleCoreOSGBasic"/>
+      <plugin name="dmzRenderModuleIsectOSG"/>
+      <plugin name="dmzRenderModulePortalOSG"/>
+      <plugin name="dmzRenderPluginLoadModelOSG"/>
+      <plugin name="dmzRenderPluginObjectOSG"/>
+      <!-- <plugin name="dmzRenderPluginTmp"/> -->
+   </plugins>
+   <dmzRenderModuleCoreOSGBasic>
+      <plugins>
+         <plugin name="dmzRenderExtViewerOSG"/>
+      </plugins>
+      <dmzRenderExtViewerOSG>
+         <window left="100" top="100" width="640" height="480" screen="0"/>
+         <!-- <fullscreen screen="0"/> -->
+      </dmzRenderExtViewerOSG>
+   </dmzRenderModuleCoreOSGBasic>
+   <dmzRenderModulePortalOSG>
+      <visibility fov="60.0" near="1.0" far="32000.0"/>
+   </dmzRenderModulePortalOSG>
+   <dmzRenderPluginLoadModelOSG>
+      <model name="Crater" file="../../Jupiter_Moon_Io/Crater.ive">
+      </model>
+   </dmzRenderPluginLoadModelOSG>
+</dmz>

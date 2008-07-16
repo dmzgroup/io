@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dmz>
+   <plugins>
+      <plugin name="dmzAudioModuleFMOD"/>
+      <plugin name="dmzAudioModulePortalBasic"/>
+      <plugin name="dmzAudioPluginObject" />
+   </plugins>
+   <dmzAudioModulePortalBasic>
+     <name value="audioportal1"/>
+   </dmzAudioModulePortalBasic>
+   <dmzAudioModuleFMOD>
+      <dopplerScale value="1.0"/>
+      <distanceFactor value="1.0"/>
+      <rollOffScale value="1.0"/>
+      <maxChannels value="256"/>
+      <rightHandedCoordinates value="True"/>
+      <forceFullDirectSoundHRTF value="True"/>
+   </dmzAudioModuleFMOD>
+</dmz>

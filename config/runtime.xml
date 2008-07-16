@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<runtime>
+   <time>
+      <frequency value="60.0"/>
+   </time>
+   <states>
+      <state name="Engine_On"/>
+      <state name="Horn_On"/>
+      <state name="Deactivate"/>
+      <state name="Damaged"/>
+      <state name="Dead"/>
+   </states>
+   <types>
+      <object name="vehicle">
+         <render>
+            <model file="arrow1.mesh"/>
+         </render>
+         <net>
+            <type enum="1"/>
+            <state name="Damaged" mask="0x001"/>
+            <state name="Dead" mask="0x002"/>
+            <state name="Engine_On" mask="0x004"/>
+            <state name="Horn_On" mask="0x008"/>
+            <state name="Deactivate" mask="0x010"/>
+         </net>
+      </object>
+      <object name="buggy" parent="vehicle">
+         <net>
+            <type enum="1.1"/>
+         </net>
+         <audio>
+            <sound
+               state="Engine_On"
+               loopedfile="../../assets/sounds/game_engine.wav"
+               scalar="throttle"
+            />
+            <sound
+               state="Horn_On"
+               loopedfile="../../assets/sounds/horn.wav"
+            />
+         </audio>
+      </object>
+      <object name="red_buggy" parent="buggy">
+         <render>
+            <model file="../../Jupiter_Moon_Io/Entities/Hoverover_red.ive"/>
+         </render>
+         <net>
+            <type enum="1.1.1"/>
+         </net>
+      </object>
+      <object name="blue_buggy" parent="buggy">
+         <render>
+            <model file="../../Jupiter_Moon_Io/Entities/Hoverover_blue.ive"/>
+         </render>
+         <net>
+            <type enum="1.1.2"/>
+         </net>
+      </object>
+      <object name="silver_buggy" parent="buggy">
+         <render>
+            <model file="../../Jupiter_Moon_Io/Entities/Hoverover_grey.ive"/>
+         </render>
+         <net>
+            <type enum="1.1.3"/>
+         </net>
+      </object>
+   </types>
+</runtime>
+</dmz>

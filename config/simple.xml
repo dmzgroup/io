@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dmz>
+<plugins>
+   <plugin name="dmzEntityPluginGroundSimple"/>
+   <plugin name="dmzEntityPluginFreeFly" reserve="true"/>
+   <plugin name="dmzEntityPluginPortalFollow"/>
+   <plugin name="dmzEntityPluginPortalTether"/>
+   <plugin name="dmzEntityPluginTeleport"/>
+   <plugin name="dmzEntityPluginHorn"/>
+</plugins>
+<dmzLuaModuleBasic>
+   <instance name="dmzEntityPluginFreeFly"/>
+</dmzLuaModuleBasic>
+<dmzEntityPluginFreeFly>
+   <movement speed="100" turnRate="2.4"/>
+   <input>
+      <channel name="freefly"/>
+   </input>
+</dmzEntityPluginFreeFly>
+<dmzEntityPluginGroundSimple>
+   <movement speed="25"/>
+   <input>
+      <channel name="ground"/>
+   </input>
+</dmzEntityPluginGroundSimple>
+<dmzEntityPluginPortalFollow>
+   <input>
+      <channel name="ground"/>
+   </input>
+</dmzEntityPluginPortalFollow>
+<dmzEntityPluginPortalTether>
+   <input>
+      <channel name="freefly"/>
+   </input>
+</dmzEntityPluginPortalTether>
+<dmzEntityPluginPortalFollow>
+   <offset x="0.0" y="2.5" z="6.5"/>
+</dmzEntityPluginPortalFollow>
+<dmzEntityPluginPortalTether>
+   <offset x="0.0" y="2.5" z="6.5"/>
+</dmzEntityPluginPortalTether>
+</dmz>
+  

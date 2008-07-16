@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<dmzObjectPluginArchive>
+   <object type="silver_buggy">
+      <attributes>
+         <state value="Engine_On"/>
+         <position x="-632.079163" y="11.240967" z="-52.417877"/>
+         <orientation
+             v0="0.999929" v1="-0.000036" v2="0.011914"
+             v3="0.000035" v4="1.000000" v5="0.000083"
+             v6="-0.011914" v7="-0.000083" v8="0.999929"
+         />
+         <velocity x="0.0" y="0.0" z="0.0"/>
+         <acceleration x="7.0" y="8.0" z="9.0"/>
+      </attributes>
+      <attributes name="Human_In_The_Loop">
+         <flag value="true"/>
+      </attributes>
+      <attributes name="Layer_Link">
+         <links>
+            <object name="layer_1"/>
+         </links>
+      </attributes>
+   </object>
+</dmzObjectPluginArchive>
+</dmz>

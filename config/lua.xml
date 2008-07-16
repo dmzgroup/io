@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<plugins>
+   <plugin name="dmzLuaModuleBasic"/>
+   <plugin name="dmzLuaPluginReset"/>
+</plugins>
+<dmzLuaPluginTimedReset>
+   <time value="0.5"/>
+</dmzLuaPluginTimedReset>
+<dmzLuaModuleBasic>
+   <extensions>
+      <plugin name="dmzLuaExtInput"/>
+      <plugin name="dmzLuaExtIsect"/>
+      <plugin name="dmzLuaExtObject"/>
+      <plugin name="dmzQtExtLuaConsole"/>
+   </extensions>
+</dmzLuaModuleBasic>
+</dmz>
