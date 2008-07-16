@@ -6,7 +6,6 @@
       <plugin name="dmzRenderModulePortalOSG"/>
       <plugin name="dmzRenderPluginLoadModelOSG"/>
       <plugin name="dmzRenderPluginObjectOSG"/>
-      <!-- <plugin name="dmzRenderPluginTmp"/> -->
    </plugins>
    <dmzRenderModuleCoreOSGBasic>
       <plugins>
