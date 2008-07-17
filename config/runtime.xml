@@ -43,7 +43,9 @@
       </object>
       <object name="red_buggy" parent="buggy">
          <render>
-            <model file="../../Jupiter_Moon_Io/Entities/Hoverover_red.ive"/>
+            <model file="Hoverover_red.ive"/>
+            <model file="Hoverover_red_immobilized.ive"
+               state="Damaged"/>
          </render>
          <net>
             <type enum="1.1.1"/>
@@ -51,7 +53,9 @@
       </object>
       <object name="blue_buggy" parent="buggy">
          <render>
-            <model file="../../Jupiter_Moon_Io/Entities/Hoverover_blue.ive"/>
+            <model file="Hoverover_blue.ive"/>
+            <model file="Hoverover_blue_immobilized.ive"
+               state="Damaged"/>
          </render>
          <net>
             <type enum="1.1.2"/>
@@ -59,7 +63,9 @@
       </object>
       <object name="silver_buggy" parent="buggy">
          <render>
-            <model file="../../Jupiter_Moon_Io/Entities/Hoverover_grey.ive"/>
+            <model file="Hoverover_grey.ive"/>
+            <model file="Hoverover_grey_immobilized.ive"
+               state="Damaged"/>
          </render>
          <net>
             <type enum="1.1.3"/>

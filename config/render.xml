@@ -7,6 +7,12 @@
       <plugin name="dmzRenderPluginLoadModelOSG"/>
       <plugin name="dmzRenderPluginObjectOSG"/>
    </plugins>
+   <dmzRenderPluginObjectOSG>
+      <search>
+         <path value="../../Jupiter_Moon_Io"/>
+         <path value="../../Jupiter_Moon_Io/Entities"/>
+      </search>
+   </dmzRenderPluginObjectOSG>
    <dmzRenderModuleCoreOSGBasic>
       <plugins>
          <plugin name="dmzRenderExtViewerOSG"/>
