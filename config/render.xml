@@ -8,12 +8,11 @@
       <plugin name="dmzRenderPluginObjectOSG"/>
       <plugin name="dmzRenderPluginLogoOSG"/>
    </plugins>
-   <dmzRenderPluginObjectOSG>
+   <dmzRenderModuleCoreOSGBasic>
       <search>
          <path value="../../assets/io"/>
+         <path value="../../assets/images"/>
       </search>
-   </dmzRenderPluginObjectOSG>
-   <dmzRenderModuleCoreOSGBasic>
       <plugins>
          <plugin name="dmzRenderExtViewerOSG"/>
       </plugins>
