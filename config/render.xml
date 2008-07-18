@@ -10,7 +10,7 @@
    </plugins>
    <dmzRenderPluginObjectOSG>
       <search>
-         <path value="../../Jupiter_Moon_Io/Entities"/>
+         <path value="../../assets/io"/>
       </search>
    </dmzRenderPluginObjectOSG>
    <dmzRenderModuleCoreOSGBasic>
@@ -26,7 +26,7 @@
       <visibility fov="60.0" near="1.0" far="32000.0"/>
    </dmzRenderModulePortalOSG>
    <dmzRenderPluginLoadModelOSG>
-      <model name="Crater" file="../../Jupiter_Moon_Io/Crater.ive">
+      <model name="Crater" file="../../assets/io/Crater.ive">
       </model>
    </dmzRenderPluginLoadModelOSG>
 </dmz>
