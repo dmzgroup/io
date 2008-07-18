@@ -6,10 +6,10 @@
       <plugin name="dmzRenderModulePortalOSG"/>
       <plugin name="dmzRenderPluginLoadModelOSG"/>
       <plugin name="dmzRenderPluginObjectOSG"/>
+      <plugin name="dmzRenderPluginLogoOSG"/>
    </plugins>
    <dmzRenderPluginObjectOSG>
       <search>
-         <path value="../../Jupiter_Moon_Io"/>
          <path value="../../Jupiter_Moon_Io/Entities"/>
       </search>
    </dmzRenderPluginObjectOSG>
