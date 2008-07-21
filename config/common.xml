@@ -9,14 +9,14 @@
    <plugin name="dmzArchiveModuleBasic"/>
    <plugin name="dmzArchivePluginAutoLoad"/>
    <plugin name="dmzArchivePluginQuickSave"/>
-   <plugin name="dmzArchivePluginObject" unique="dmzObjectPluginArchive"/>
+   <plugin name="dmzArchivePluginObject"/>
    <plugin name="dmzObjectModuleBasic"/>
    <!-- <plugin name="dmzObjectPluginDump"/> -->
    <!-- <plugin name="dmzPluginTermExit"/> -->
 </plugins>
-<dmzObjectPluginArchive>
+<dmzArchivePluginObject>
    <archive>
       <attribute name="Last_Network_Value" contains="True"/>
    </archive>
-</dmzObjectPluginArchive>
+</dmzArchivePluginObject>
 </dmz>

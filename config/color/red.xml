@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmz>
-<dmzObjectPluginArchive>
+<objects>
    <object type="red_buggy">
       <attributes>
          <state value="Engine_On"/>
@@ -25,5 +25,5 @@
          </links>
       </attributes>
    </object>
-</dmzObjectPluginArchive>
+</objects>
 </dmz>
