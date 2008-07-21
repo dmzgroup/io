@@ -9,7 +9,7 @@
    <plugin name="dmzArchiveModuleBasic"/>
    <plugin name="dmzArchivePluginAutoLoad"/>
    <plugin name="dmzArchivePluginQuickSave"/>
-   <plugin name="dmzObjectPluginArchive"/>
+   <plugin name="dmzArchivePluginObject" unique="dmzObjectPluginArchive"/>
    <plugin name="dmzObjectModuleBasic"/>
    <!-- <plugin name="dmzObjectPluginDump"/> -->
    <!-- <plugin name="dmzPluginTermExit"/> -->
