@@ -2,7 +2,7 @@
 <dmz>
 <runtime>
    <time>
-      <frequency value="60.0"/>
+      <frequency value="0.0"/>
    </time>
    <states>
       <state name="Engine_On"/>
