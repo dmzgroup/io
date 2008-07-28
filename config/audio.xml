@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dmz>
    <plugins>
-      <plugin name="dmzAudioModuleFMOD" platform="win32"/>
-      <plugin name="dmzAudioModuleOpenAL" platform="macos"/>
+      <plugin name="dmzAudioModuleOpenAL"/>
       <plugin name="dmzAudioModulePortalBasic"/>
       <plugin name="dmzAudioPluginObject" />
    </plugins>
