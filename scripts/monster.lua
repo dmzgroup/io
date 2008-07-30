@@ -40,7 +40,7 @@ end
 
 local function update_time_slice (self, time)
    if self.target then
-      local max = time * 33
+      local max = time * 18
       local cpos = dmz.object.position (self.m)
       if cpos then
          local offset = self.target - cpos

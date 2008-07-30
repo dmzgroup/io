@@ -38,7 +38,7 @@
          <audio>
             <sound
                state="Engine_On"
-               loopedfile="../../assets/sounds/game_engine.wav"
+               loopedfile="../../assets/sounds/game_engine_mono.wav"
                scalar="throttle"
             />
             <sound
