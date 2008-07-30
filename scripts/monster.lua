@@ -1,7 +1,8 @@
 
 local function update_object_position (self, handle, attr, value)
 
-   if (handle ~= self.m) and (dmz.object_type.new ("monster") ~= dmz.object.type (handle)) then
+   if (handle ~= self.m) and
+         (dmz.object_type.new ("monster") ~= dmz.object.type (handle)) then
       if not self.targetHandle then
          self.targetHandle = handle
          self.target = value
@@ -15,6 +16,13 @@ local function update_object_position (self, handle, attr, value)
             end
          end
       end
+   end
+end
+
+local function destroy_object (self, handle)
+   if self.targetHandle == handle then
+      self.targetHandle = nil
+      self.target = self.startPos
    end
 end
 
@@ -77,7 +85,10 @@ local function start_plugin (self)
    dmz.object.activate (self.m)
    dmz.object.set_temporary (self.m)
 
-   local cb = { update_object_position = update_object_position }
+   local cb = {
+      update_object_position = update_object_position,
+      destroy_object = destroy_object,
+    }
    self.obs:register (nil, cb, self)
 end
 
