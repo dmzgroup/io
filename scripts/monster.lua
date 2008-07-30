@@ -1,11 +1,21 @@
 
 local function update_object_position (self, handle, attr, value)
 
-   if (handle ~= self.m) and (not self.targetHandle) then
-      cprint ("pos: ", handle, value)
-      if not self.targetHandle then self.targetHandle = handle end
+   if (handle ~= self.m) and (dmz.object_type.new ("monster") ~= dmz.object.type (handle)) then
+      if not self.targetHandle then
+         self.targetHandle = handle
+         self.target = value
+      elseif self.targetHandle == handle then self.target = value
+      else
+         local cpos = dmz.object.position (self.m)
+         if cpos then
+            if (cpos - value):magnitude () < (cpos - self.target):magnitude () then
+               self.targetHandle = handle
+               self.target = value
+            end
+         end
+      end
    end
-   if self.targetHandle == handle then self.target = value end
 end
 
 local Forward = dmz.vector.new {0.0, 0.0, -1.0}
