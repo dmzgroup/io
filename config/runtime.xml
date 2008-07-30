@@ -12,10 +12,16 @@
       <state name="Dead"/>
    </states>
    <types>
-      <object name="vehicle">
+      <object name="monster">
+         <net>
+            <type enum="2"/>
+            <state name="Deactivate" mask="0x010"/>
+         </net>
          <render>
-            <model file="arrow1.mesh"/>
+            <model file="Tentacreature.ive"/>
          </render>
+      </object>
+      <object name="vehicle">
          <net>
             <type enum="1"/>
             <state name="Damaged" mask="0x001"/>

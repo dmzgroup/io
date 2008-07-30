@@ -4,6 +4,7 @@
    <path value="../../assets/ioRaceway/textures"/>
    <path value="../../assets/models/"/>
    <path value="../dmz/scripts/entity"/>
+   <path value="./scripts"/>
 </dmzFileCacheLocal>
 <plugins>
    <plugin name="dmzArchiveModuleBasic"/>

@@ -17,6 +17,7 @@
    </header>
    <packet handle="1" name="dmzNetExtPacketCodecObjectBasic">
       <object type="vehicle"/>
+      <object type="monster"/>
    </packet>
    <plugins>
       <plugin name="dmzNetExtPacketCodecObjectBasic"/>
