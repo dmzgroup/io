@@ -1,7 +1,7 @@
 
 local function update_object_position (self, handle, attr, value)
 
-   if (handle ~= self.m) and
+   if not self.goingHome and (handle ~= self.m) and
          (dmz.object_type.new ("monster") ~= dmz.object.type (handle)) then
       if not self.targetHandle then
          self.targetHandle = handle
@@ -23,6 +23,7 @@ local function destroy_object (self, handle)
    if self.targetHandle == handle then
       self.targetHandle = nil
       self.target = self.startPos
+      self.goingHome = true
    end
 end
 
@@ -30,9 +31,8 @@ local Forward = dmz.vector.new {0.0, 0.0, -1.0}
 local Right = dmz.vector.new {1.0, 0.0, 0.0}
 local Up = dmz.vector.new {0.0, 1.0, 0.0}
 
-local function new_ori (self, origOri, targetVec)
+local function new_ori (self, time, origOri, targetVec)
    local result = dmz.matrix.new ()
-   --result = result:from_two_vectors (Forward, targetVec)
    local hvec = dmz.vector.new (targetVec)
    hvec:set_y (0.0)
    hvec = hvec:normalize ()
@@ -50,6 +50,34 @@ local function new_ori (self, origOri, targetVec)
    if ncross:get_y () > 0.0 then
       pitch = dmz.math.TwoPi - pitch
    end
+   if not self.heading then self.heading = heading
+   else
+      local diff = heading - self.heading
+      if diff > dmz.math.Pi then diff = diff - dmz.math.TwoPi
+      elseif diff < -dmz.math.Pi then diff = diff + dmz.math.TwoPi
+      end
+      local max = time * dmz.math.Pi
+      if math.abs (diff) > max then
+         if diff > 0 then heading = self.heading + max
+         else heading = self.heading - max
+         end
+      end
+   end
+   self.heading = heading
+   if not self.pitch then self.pitch = pitch
+   else
+      local diff = pitch - self.pitch
+      if diff > dmz.math.Pi then diff = diff - dmz.math.TwoPi
+      elseif diff < -dmz.math.Pi then diff = diff + dmz.math.TwoPi
+      end
+      local max = time * dmz.math.Pi
+      if math.abs (diff) > max then
+         if diff > 0 then pitch = self.pitch + max
+         else pitch = self.pitch - max
+         end
+      end
+   end
+   self.pitch = pitch
    local pm = dmz.matrix.new ():from_axis_and_angle (Right, pitch)
    result = result:from_axis_and_angle (Up, heading);
    result = pm * result
@@ -58,16 +86,36 @@ end
 
 local function update_time_slice (self, time)
    if self.target then
-      local max = time * 18
+      local max = time * 33
       local cpos = dmz.object.position (self.m)
       if cpos then
          local offset = self.target - cpos
          local d = offset:magnitude ()
+         local distance = d
          offset = offset:normalize ()
          if d > max then d = max end
          cpos = (offset * d) + cpos
          dmz.object.position (self.m, nil, cpos)
-         dmz.object.orientation (self.m, nil, new_ori (self, nil, offset))
+         if not dmz.math.is_zero (distance, 1.0) then
+            dmz.object.orientation (self.m, nil, new_ori (self, time, nil, offset))
+         else
+            self.target = self.startPos
+            if self.goingHome then self.goingHome = false
+            else
+               self.goingHome = true
+               if self.targetHandle then
+                  local tvel = dmz.object.velocity (self.targetHandle)
+                  local tpos = dmz.object.position (self.targetHandle)
+                  if tvel and tpos then
+                     tpos:set_y (tpos:get_y () + 1.0)
+                     tvel:set_y (tvel:get_y () + 20.0)
+                     dmz.object.position (self.targetHandle, nil, tpos)
+                     dmz.object.velocity (self.targetHandle, nil, tvel)
+                  end
+               end
+            end
+            self.targetHandle = nil
+         end
          if not dmz.math.is_zero (time) then
             local vel = offset * (d /  time)
             dmz.object.velocity (self.m, nil, vel)
@@ -95,6 +143,7 @@ end
 function new (config, name)
    local self = {
       name = name,
+      goingHome = false,
       start_plugin = start_plugin,
       obs = dmz.object_observer.new (),
       tick = dmz.time_slice.new (),
