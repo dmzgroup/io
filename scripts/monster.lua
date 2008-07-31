@@ -31,6 +31,20 @@ local Forward = dmz.vector.new {0.0, 0.0, -1.0}
 local Right = dmz.vector.new {1.0, 0.0, 0.0}
 local Up = dmz.vector.new {0.0, 1.0, 0.0}
 
+local function rotate (time, orig, target)
+   local diff = target - orig
+   if diff > dmz.math.Pi then diff = diff - dmz.math.TwoPi
+   elseif diff < -dmz.math.Pi then diff = diff + dmz.math.TwoPi
+   end
+   local max = time * dmz.math.Pi
+   if math.abs (diff) > max then
+      if diff > 0 then target = orig + max
+      else target = orig - max
+      end
+   end
+   return target
+end
+
 local function new_ori (self, time, origOri, targetVec)
    local result = dmz.matrix.new ()
    local hvec = dmz.vector.new (targetVec)
@@ -50,33 +64,9 @@ local function new_ori (self, time, origOri, targetVec)
    if ncross:get_y () > 0.0 then
       pitch = dmz.math.TwoPi - pitch
    end
-   if not self.heading then self.heading = heading
-   else
-      local diff = heading - self.heading
-      if diff > dmz.math.Pi then diff = diff - dmz.math.TwoPi
-      elseif diff < -dmz.math.Pi then diff = diff + dmz.math.TwoPi
-      end
-      local max = time * dmz.math.Pi
-      if math.abs (diff) > max then
-         if diff > 0 then heading = self.heading + max
-         else heading = self.heading - max
-         end
-      end
-   end
+   if self.heading then heading = rotate (time, self.heading, heading) end
    self.heading = heading
-   if not self.pitch then self.pitch = pitch
-   else
-      local diff = pitch - self.pitch
-      if diff > dmz.math.Pi then diff = diff - dmz.math.TwoPi
-      elseif diff < -dmz.math.Pi then diff = diff + dmz.math.TwoPi
-      end
-      local max = time * dmz.math.Pi
-      if math.abs (diff) > max then
-         if diff > 0 then pitch = self.pitch + max
-         else pitch = self.pitch - max
-         end
-      end
-   end
+   if self.pitch then pitch = rotate (time, self.pitch, pitch) end
    self.pitch = pitch
    local pm = dmz.matrix.new ():from_axis_and_angle (Right, pitch)
    result = result:from_axis_and_angle (Up, heading);
