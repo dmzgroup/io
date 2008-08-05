@@ -1,7 +1,9 @@
 
 local function update_object_position (self, handle, attr, value)
    if not self.goingHome and (handle ~= self.m) and
-         (dmz.object_type.new ("monster") ~= dmz.object.type (handle)) then
+         (dmz.object_type.new ("monster") ~= dmz.object.type (handle))
+         and (dmz.object_type.new ("missile") ~= dmz.object.type (handle))
+         then
       if not self.targetHandle then
          self.targetHandle = handle
          self.target = value

@@ -21,6 +21,15 @@
             <model file="Tentacreature.ive"/>
          </render>
       </object>
+      <object name="missile">
+         <net>
+            <type enum="3"/>
+            <state name="Deactivate" mask="0x010"/>
+         </net>
+         <render>
+            <model file="LavaProjectile.ive"/>
+         </render>
+      </object>
       <object name="vehicle">
          <net>
             <type enum="1"/>
