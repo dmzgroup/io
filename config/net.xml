@@ -20,11 +20,14 @@
       <object type="monster"/>
       <object type="missile"/>
    </packet>
+   <packet handle="2" name="dmzNetExtPacketCodecEventBasic">
+      <event type="Event_Launch"/>
+      <event type="Event_Detonation"/>
+      <event type="Event_Collision"/>
+   </packet>
    <plugins>
       <plugin name="dmzNetExtPacketCodecObjectBasic"/>
-      <!--
-      <plugin name="dmzNetExtPacketCodecObjectEvent"/>
-      -->
+      <plugin name="dmzNetExtPacketCodecEventBasic"/>
    </plugins>
 </dmzNetModulePacketCodecBasic>
 </dmz>

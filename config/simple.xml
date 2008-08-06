@@ -7,6 +7,8 @@
    <plugin name="dmzEntityPluginPortalTether"/>
    <plugin name="dmzEntityPluginTeleport"/>
    <plugin name="dmzEntityPluginHorn"/>
+   <plugin name="dmzEntityPluginDamage"/>
+   <plugin name="dmzEntityPluginDeadTimer"/>
 </plugins>
 <dmzLuaModuleBasic>
    <instance name="dmzEntityPluginFreeFly"/>
@@ -39,5 +41,8 @@
 <dmzEntityPluginPortalTether>
    <offset x="0.0" y="2.5" z="6.5"/>
 </dmzEntityPluginPortalTether>
+<dmzEntityPluginDeadTimer>
+   <timer value="5.0"/>
+</dmzEntityPluginDeadTimer>
 </dmz>
   
