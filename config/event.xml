@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dmz>
+<plugins>
+  <plugin name="dmzEventModuleBasic"/>
+  <plugin name="dmzEventModuleCommonBasic"/>
+  <plugin name="dmzEventPluginDump"/>
+</plugins>
+</dmz>

@@ -16,7 +16,7 @@
          <velocity x="0.0" y="0.0" z="0.0"/>
          <acceleration x="0.0" y="0.0" z="0.0"/>
       </attributes>
-      <attributes name="Human_In_The_Loop">
+      <attributes name="Object_Human_In_The_Loop">
          <flag value="true"/>
       </attributes>
       <attributes name="Layer_Link">

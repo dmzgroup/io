@@ -12,6 +12,9 @@
       <state name="Dead"/>
    </states>
    <types>
+      <event name="Event_Launch"/>
+      <event name="Event_Detonation"/>
+      <event name="Event_Collision"/>
       <object name="monster">
          <net>
             <type enum="2"/>
