@@ -95,14 +95,7 @@ local function update_time_slice (self, time)
             else
                self.goingHome = true
                if self.targetHandle then
-                  local tvel = dmz.object.velocity (self.targetHandle)
-                  local tpos = dmz.object.position (self.targetHandle)
-                  if tvel and tpos then
-                     tpos:set_y (tpos:get_y () + 1.0)
-                     tvel:set_y (tvel:get_y () + 20.0)
-                     dmz.object.position (self.targetHandle, nil, tpos)
-                     dmz.object.velocity (self.targetHandle, nil, tvel)
-                  end
+                  dmz.event.detonation (self.m, self.targetHandle)
                end
             end
             self.targetHandle = nil
@@ -111,6 +104,21 @@ local function update_time_slice (self, time)
             local vel = offset * (d /  time)
             dmz.object.velocity (self.m, nil, vel)
          end
+      end
+   end
+end
+
+local function end_event (self, handle, eventType, locality)
+   local target = dmz.event.object_handle (handle, dmz.event.TargetHandle)
+   if target and (target == self.m) then
+      if not self.hitCount then self.hitCount = 1
+      else self.hitCount = self.hitCount + 1
+      end
+      if self.hitCount > 2 then
+         self.target = self.startPos
+         self.targetHandle = nil
+         self.goingHome = true
+         self.hitCount = 0
       end
    end
 end
@@ -127,8 +135,11 @@ local function start_plugin (self)
    local cb = {
       update_object_position = update_object_position,
       destroy_object = destroy_object,
-    }
+   }
    self.obs:register (nil, cb, self)
+
+   cb = { end_event = end_event }
+   self.event:register ("Event_Detonation", cb, self)
 end
 
 function new (config, name)
@@ -137,6 +148,7 @@ function new (config, name)
       goingHome = false,
       start_plugin = start_plugin,
       obs = dmz.object_observer.new (),
+      event = dmz.event_observer.new (),
       tick = dmz.time_slice.new (),
       log = dmz.log.new ("lua." .. name),
       startPos = config:lookup_vector ("start.position", {-187.36, -22.85, -530.72}),

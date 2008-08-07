@@ -12,6 +12,7 @@
       <plugin name="dmzLuaExtInput"/>
       <plugin name="dmzLuaExtIsect"/>
       <plugin name="dmzLuaExtObject"/>
+      <plugin name="dmzLuaExtEvent"/>
       <plugin name="dmzQtExtLuaConsole"/>
    </extensions>
 </dmzLuaModuleBasic>
