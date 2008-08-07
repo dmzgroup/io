@@ -54,6 +54,10 @@
                scalar="throttle"
             />
             <sound
+               state="Dead"
+               loopedfile="../../assets/sounds/dead.wav"
+            />
+            <sound
                state="Horn_On"
                loopedfile="../../assets/sounds/horn.wav"
             />
