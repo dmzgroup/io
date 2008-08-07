@@ -5,7 +5,7 @@
 </plugins>
 <dmzWeaponPluginFixedLauncher>
    <munitions type="missile"/>
-   <offset x="0.0" y="1.5" z="-2.0"/>
+   <offset x="0.0" y="1.0" z="-2.0"/>
 </dmzWeaponPluginFixedLauncher>
 <dmzWeaponPluginLaserBullet>
    <munitions type="missile"/>

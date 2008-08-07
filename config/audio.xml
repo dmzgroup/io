@@ -4,6 +4,7 @@
       <plugin name="dmzAudioModuleOpenAL"/>
       <plugin name="dmzAudioModulePortalBasic"/>
       <plugin name="dmzAudioPluginObject" />
+      <plugin name="dmzAudioPluginEventSimple" />
    </plugins>
    <dmzAudioModulePortalBasic>
      <name value="audioportal1"/>
