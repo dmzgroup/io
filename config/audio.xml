@@ -17,4 +17,7 @@
       <rightHandedCoordinates value="True"/>
       <forceFullDirectSoundHRTF value="True"/>
    </dmzAudioModuleFMOD>
+   <dmzAudioPluginEventSimple>
+      <event type="Event_Launch" file="../../assets/sounds/launch.wav"/>
+   </dmzAudioPluginEventSimple>
 </dmz>
