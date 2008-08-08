@@ -20,5 +20,6 @@
    <dmzAudioPluginEventSimple>
       <event type="Event_Launch" file="../../assets/sounds/launch.wav"/>
       <event type="Event_Detonation" file="../../assets/sounds/detonation.wav"/>
+      <event type="Event_Collision" file="../../assets/sounds/collision.wav"/>
    </dmzAudioPluginEventSimple>
 </dmz>
