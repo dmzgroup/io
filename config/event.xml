@@ -3,6 +3,6 @@
 <plugins>
   <plugin name="dmzEventModuleBasic"/>
   <plugin name="dmzEventModuleCommonBasic"/>
-  <!-- <plugin name="dmzEventPluginDump"/> -->
+  <plugin name="dmzEventPluginDump"/>
 </plugins>
 </dmz>
