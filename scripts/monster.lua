@@ -53,7 +53,7 @@ local function new_ori (self, time, origOri, targetVec)
    hvec = hvec:normalize ()
    local heading = Forward:get_angle (hvec)
    local hcross = Forward:cross (hvec):normalize ()
-   if hcross:get_y () > 0.0 then
+   if hcross:get_y () < 0.0 then
       heading = dmz.math.TwoPi - heading
    end
    if heading > dmz.math.Pi then heading = heading - dmz.math.TwoPi
@@ -62,7 +62,7 @@ local function new_ori (self, time, origOri, targetVec)
    local pitch = targetVec:get_angle (hvec)
    local pcross = targetVec:cross (hvec):normalize ()
    local ncross = hvec:cross (pcross)
-   if ncross:get_y () > 0.0 then
+   if ncross:get_y () < 0.0 then
       pitch = dmz.math.TwoPi - pitch
    end
    if self.heading then heading = rotate (time, self.heading, heading) end
@@ -71,7 +71,7 @@ local function new_ori (self, time, origOri, targetVec)
    self.pitch = pitch
    local pm = dmz.matrix.new ():from_axis_and_angle (Right, pitch)
    result = result:from_axis_and_angle (Up, heading);
-   result = pm * result
+   result = result * pm
    return result;
 end
 
