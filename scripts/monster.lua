@@ -108,7 +108,7 @@ local function update_time_slice (self, time)
    end
 end
 
-local function end_event (self, handle, eventType, locality)
+local function close_event (self, handle, eventType, locality)
    local target = dmz.event.object_handle (handle, dmz.event.TargetHandle)
    if target and (target == self.m) then
       if not self.hitCount then self.hitCount = 1
@@ -138,7 +138,7 @@ local function start_plugin (self)
    }
    self.obs:register (nil, cb, self)
 
-   cb = { end_event = end_event }
+   cb = { close_event = close_event }
    self.event:register ("Event_Detonation", cb, self)
 end
 
