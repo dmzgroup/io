@@ -151,8 +151,8 @@ function new (config, name)
       event = dmz.event_observer.new (),
       tick = dmz.time_slice.new (),
       log = dmz.log.new ("lua." .. name),
-      startPos = config:lookup_vector ("start.position", {-187.36, -22.85, -530.72}),
-      startOri = config:lookup_matrix ("start.orientation", {
+      startPos = config:to_vector ("start.position", {-187.36, -22.85, -530.72}),
+      startOri = config:to_matrix ("start.orientation", {
          -0.977021, 0.000000, 0.213142,
          0.000000, 1.000000, -0.000000,
          -0.213142, 0.000000, -0.977021,
