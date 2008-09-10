@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dmz>
    <plugins>
-      <plugin name="dmzRenderModuleCoreOSGBasic"/>
       <plugin name="dmzRenderModuleIsectOSG"/>
       <plugin name="dmzRenderModulePortalOSG"/>
       <plugin name="dmzRenderPluginLoadModelOSG"/>
       <plugin name="dmzRenderPluginObjectOSG"/>
       <plugin name="dmzRenderPluginLogoOSG"/>
+      <!--
+         Note: Setting this module to unload="false" stops the crash on exit
+               under Linux. This seems to be cause by an "on exit" call in
+               OSG.
+      -->
+      <plugin name="dmzRenderModuleCoreOSGBasic"/>
    </plugins>
    <dmzRenderModuleCoreOSGBasic>
       <search>
