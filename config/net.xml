@@ -16,14 +16,14 @@
       <size type="uint32"/>
    </header>
    <packet handle="1" name="dmzNetExtPacketCodecObjectBasic">
-      <object type="vehicle"/>
-      <object type="monster"/>
-      <object type="missile"/>
+      <object-type name="vehicle"/>
+      <object-type name="monster"/>
+      <object-type name="missile"/>
    </packet>
    <packet handle="2" name="dmzNetExtPacketCodecEventBasic">
-      <event type="Event_Launch"/>
-      <event type="Event_Detonation"/>
-      <event type="Event_Collision"/>
+      <event-type name="Event_Launch"/>
+      <event-type name="Event_Detonation"/>
+      <event-type name="Event_Collision"/>
    </packet>
    <plugins>
       <plugin name="dmzNetExtPacketCodecObjectBasic"/>

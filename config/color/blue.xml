@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmz>
-<objects>
+<archive>
    <object type="blue_buggy">
       <attributes>
          <state value="Engine_On"/>
@@ -22,5 +22,5 @@
          </links>
       </attributes>
    </object>
-</objects>
+</archive>
 </dmz>

@@ -4,92 +4,88 @@
    <time>
       <frequency value="0.0"/>
    </time>
-   <states>
-      <state name="Engine_On"/>
-      <state name="Horn_On"/>
-      <state name="Deactivate"/>
-      <state name="Damaged"/>
-      <state name="Dead"/>
-   </states>
-   <types>
-      <event name="Event_Launch"/>
-      <event name="Event_Detonation"/>
-      <event name="Event_Collision"/>
-      <object name="monster">
-         <net>
-            <type enum="2"/>
-            <state name="Deactivate" mask="0x010"/>
-         </net>
-         <render>
-            <model file="Tentacreature.ive"/>
-         </render>
-      </object>
-      <object name="missile">
-         <net>
-            <type enum="3"/>
-            <state name="Deactivate" mask="0x010"/>
-         </net>
-         <render>
-            <model file="LavaProjectile.ive"/>
-         </render>
-      </object>
-      <object name="vehicle">
-         <net>
-            <type enum="1"/>
-            <state name="Damaged" mask="0x001"/>
-            <state name="Dead" mask="0x002"/>
-            <state name="Engine_On" mask="0x004"/>
-            <state name="Horn_On" mask="0x008"/>
-            <state name="Deactivate" mask="0x010"/>
-         </net>
-      </object>
-      <object name="buggy" parent="vehicle">
-         <net>
-            <type enum="1.1"/>
-         </net>
-         <audio>
-            <sound
-               state="Engine_On"
-               loopedfile="../../assets/sounds/game_engine_mono.wav"
-               scalar="throttle"
-            />
-            <sound
-               state="Dead"
-               loopedfile="../../assets/sounds/dead.wav"
-            />
-            <sound
-               state="Horn_On"
-               loopedfile="../../assets/sounds/horn.wav"
-            />
-         </audio>
-      </object>
-      <object name="red_buggy" parent="buggy">
-         <render>
-            <model file="Hoverover_red.ive"/>
-            <model file="Hoverover_red_immobilized.ive" state="Dead"/>
-         </render>
-         <net>
-            <type enum="1.1.1"/>
-         </net>
-      </object>
-      <object name="blue_buggy" parent="buggy">
-         <render>
-            <model file="Hoverover_blue.ive"/>
-            <model file="Hoverover_blue_immobilized.ive" state="Dead"/>
-         </render>
-         <net>
-            <type enum="1.1.2"/>
-         </net>
-      </object>
-      <object name="silver_buggy" parent="buggy">
-         <render>
-            <model file="Hoverover_grey.ive"/>
-            <model file="Hoverover_grey_immobilized.ive" state="Dead"/>
-         </render>
-         <net>
-            <type enum="1.1.3"/>
-         </net>
-      </object>
-   </types>
+   <state name="Engine_On"/>
+   <state name="Horn_On"/>
+   <state name="Deactivate"/>
+   <state name="Damaged"/>
+   <state name="Dead"/>
+   <event-type name="Event_Launch"/>
+   <event-type name="Event_Detonation"/>
+   <event-type name="Event_Collision"/>
+   <object-type name="monster">
+      <net>
+         <enum value="2"/>
+         <state name="Deactivate" mask="0x010"/>
+      </net>
+      <render>
+         <model file="Tentacreature.ive"/>
+      </render>
+   </object-type>
+   <object-type name="missile">
+      <net>
+         <enum value="3"/>
+         <state name="Deactivate" mask="0x010"/>
+      </net>
+      <render>
+         <model file="LavaProjectile.ive"/>
+      </render>
+   </object-type>
+   <object-type name="vehicle">
+      <net>
+         <enum value="1"/>
+         <state name="Damaged" mask="0x001"/>
+         <state name="Dead" mask="0x002"/>
+         <state name="Engine_On" mask="0x004"/>
+         <state name="Horn_On" mask="0x008"/>
+         <state name="Deactivate" mask="0x010"/>
+      </net>
+   </object-type>
+   <object-type name="buggy" parent="vehicle">
+      <net>
+         <enum value="1.1"/>
+      </net>
+      <audio>
+         <state
+            name="Engine_On"
+            loopedfile="../../assets/sounds/game_engine_mono.wav"
+            scalar="throttle"
+         />
+         <state
+            name="Dead"
+            loopedfile="../../assets/sounds/dead.wav"
+         />
+         <state
+            name="Horn_On"
+            loopedfile="../../assets/sounds/horn.wav"
+         />
+      </audio>
+   </object-type>
+   <object-type name="red_buggy" parent="buggy">
+      <render>
+         <model file="Hoverover_red.ive"/>
+         <model file="Hoverover_red_immobilized.ive" state="Dead"/>
+      </render>
+      <net>
+         <enum value="1.1.1"/>
+      </net>
+   </object-type>
+   <object-type name="blue_buggy" parent="buggy">
+      <render>
+         <model file="Hoverover_blue.ive"/>
+         <model file="Hoverover_blue_immobilized.ive" state="Dead"/>
+      </render>
+      <net>
+         <enum value="1.1.2"/>
+      </net>
+   </object-type>
+   <object-type name="silver_buggy" parent="buggy">
+      <render>
+         <model file="Hoverover_grey.ive"/>
+         <model file="Hoverover_grey_immobilized.ive" state="Dead"/>
+      </render>
+      <net>
+         <enum value="1.1.3"/>
+      </net>
+   </object-type>
 </runtime>
 </dmz>
