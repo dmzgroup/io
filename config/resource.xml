@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<runtime>
+<resource-map>
+   <search>
+      <path value="../../assets/io"/>
+      <path value="../../assets/images"/>
+   </search>
+   <search name="audio">
+      <path value="../../assets/sounds"/>
+   </search>
+   <resource name="logo" file="DMZ.png"/>
+   <resource name="creature" file="Tentacreature.ive"/>
+   <resource name="projectile" file="LavaProjectile.ive"/>
+   <resource name="red" file="Hoverover_red.ive"/>
+   <resource name="red-dead" file="Hoverover_red_immobilized.ive"/>
+   <resource name="blue" file="Hoverover_blue.ive"/>
+   <resource name="blue-dead" file="Hoverover_blue_immobilized.ive"/>
+   <resource name="grey" file="Hoverover_grey.ive"/>
+   <resource name="grey-dead" file="Hoverover_grey_immobilized.ive"/>
+   <resource name="engine-sound" file="game_engine_mono.wav" path="audio"/>
+   <resource name="dead-sound" file="dead.wav" path="audio"/>
+   <resource name="horn-sound" file="horn.wav" path="audio"/>
+   <resource name="launch-sound" file="launch.wav" path="audio"/>
+   <resource name="detonation-sound" file="detonation.wav" path="audio"/>
+   <resource name="collision-sound" file="collision.wav" path="audio"/>
+</resource-map>
+</runtime>
+</dmz>

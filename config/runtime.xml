@@ -18,7 +18,7 @@
          <state name="Deactivate" mask="0x010"/>
       </net>
       <render>
-         <model file="Tentacreature.ive"/>
+         <model resource="creature"/>
       </render>
    </object-type>
    <object-type name="missile">
@@ -27,7 +27,7 @@
          <state name="Deactivate" mask="0x010"/>
       </net>
       <render>
-         <model file="LavaProjectile.ive"/>
+         <model resource="projectile"/>
       </render>
    </object-type>
    <object-type name="vehicle">
@@ -47,23 +47,23 @@
       <audio>
          <state
             name="Engine_On"
-            loopedfile="../../assets/sounds/game_engine_mono.wav"
+            looped-resource="engine-sound"
             scalar="throttle"
          />
          <state
             name="Dead"
-            loopedfile="../../assets/sounds/dead.wav"
+            looped-resource="dead-sound"
          />
          <state
             name="Horn_On"
-            loopedfile="../../assets/sounds/horn.wav"
+            looped-resource="horn-sound"
          />
       </audio>
    </object-type>
    <object-type name="red_buggy" parent="buggy">
       <render>
-         <model file="Hoverover_red.ive"/>
-         <model file="Hoverover_red_immobilized.ive" state="Dead"/>
+         <model resource="red"/>
+         <model resource="red-dead" state="Dead"/>
       </render>
       <net>
          <enum value="1.1.1"/>
@@ -71,8 +71,8 @@
    </object-type>
    <object-type name="blue_buggy" parent="buggy">
       <render>
-         <model file="Hoverover_blue.ive"/>
-         <model file="Hoverover_blue_immobilized.ive" state="Dead"/>
+         <model resource="blue"/>
+         <model resource="blue-dead" state="Dead"/>
       </render>
       <net>
          <enum value="1.1.2"/>
@@ -80,8 +80,8 @@
    </object-type>
    <object-type name="silver_buggy" parent="buggy">
       <render>
-         <model file="Hoverover_grey.ive"/>
-         <model file="Hoverover_grey_immobilized.ive" state="Dead"/>
+         <model resource="grey"/>
+         <model resource="grey-dead" state="Dead"/>
       </render>
       <net>
          <enum value="1.1.3"/>

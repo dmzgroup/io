@@ -18,8 +18,8 @@
       <forceFullDirectSoundHRTF value="True"/>
    </dmzAudioModuleFMOD>
    <dmzAudioPluginEventSimple>
-      <event-type name="Event_Launch" file="../../assets/sounds/launch.wav"/>
-      <event-type name="Event_Detonation" file="../../assets/sounds/detonation.wav"/>
-      <event-type name="Event_Collision" file="../../assets/sounds/collision.wav"/>
+      <event-type name="Event_Launch" resource="launch-sound"/>
+      <event-type name="Event_Detonation" resource="detonation-sound"/>
+      <event-type name="Event_Collision" resource="collision-sound"/>
    </dmzAudioPluginEventSimple>
 </dmz>

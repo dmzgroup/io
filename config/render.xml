@@ -14,10 +14,6 @@
       <plugin name="dmzRenderModuleCoreOSGBasic"/>
    </plugins>
    <dmzRenderModuleCoreOSGBasic>
-      <search>
-         <path value="../../assets/io"/>
-         <path value="../../assets/images"/>
-      </search>
       <plugins>
          <plugin name="dmzRenderExtViewerOSG"/>
       </plugins>
