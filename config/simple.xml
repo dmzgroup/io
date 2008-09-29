@@ -14,7 +14,7 @@
    <instance name="dmzEntityPluginFreeFly"/>
 </dmzLuaModuleBasic>
 <dmzEntityPluginFreeFly>
-   <movement speed="100" turnRate="2.4"/>
+   <movement speed="100" turn-rate="2.4"/>
    <input>
       <channel name="freefly"/>
    </input>
