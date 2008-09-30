@@ -11,16 +11,16 @@
 </plugins>
 <dmzNetModulePacketCodecBasic>
    <header>
-      <const type="uint32" value="1001001"/>
-      <handle type="uint32"/>
-      <size type="uint32"/>
+      <element type="const" base="uint32" value="2002002"/>
+      <element type="id" base="uint32"/>
+      <element type="size" base="uint32"/>
    </header>
-   <packet handle="1" name="dmzNetExtPacketCodecObjectBasic">
+   <packet id="1" name="dmzNetExtPacketCodecObjectBasic">
       <object-type name="vehicle"/>
       <object-type name="monster"/>
       <object-type name="missile"/>
    </packet>
-   <packet handle="2" name="dmzNetExtPacketCodecEventBasic">
+   <packet id="2" name="dmzNetExtPacketCodecEventBasic">
       <event-type name="Event_Launch"/>
       <event-type name="Event_Detonation"/>
       <event-type name="Event_Collision"/>
