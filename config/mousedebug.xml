@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmz>
+<dmzFileCacheLocal>
+   <path value="../dmz/scripts/input"/>
+</dmzFileCacheLocal>
+<dmzLuaModuleBasic>
+   <instance name="dmzMouseDebug"/>
+</dmzLuaModuleBasic>
+</dmz>
