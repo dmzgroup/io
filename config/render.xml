@@ -26,7 +26,7 @@
       <visibility fov="60.0" near="1.0" far="32000.0"/>
    </dmzRenderModulePortalOSG>
    <dmzRenderPluginLoadModelOSG>
-      <model name="Crater" file="../../assets/io/Crater.ive">
+      <model name="Crater" file="../../assets/io/models/Crater.ive">
       </model>
    </dmzRenderPluginLoadModelOSG>
 </dmz>
