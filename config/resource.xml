@@ -3,11 +3,13 @@
 <runtime>
 <resource-map>
    <search>
-      <path value="../../assets/io"/>
-      <path value="../../assets/images"/>
+      <path value="../../assets/io/models"/>
+      <path value="../../assets/io/images"/>
+      <path value="./assets/"/>
    </search>
    <search name="audio">
-      <path value="../../assets/sounds"/>
+      <path value="../../assets/io/sounds"/>
+      <path value="./assets/"/>
    </search>
    <resource name="logo" file="DMZ.png"/>
    <resource name="creature" file="Tentacreature.ive"/>
