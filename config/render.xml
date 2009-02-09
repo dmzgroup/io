@@ -6,13 +6,13 @@
       <plugin name="dmzRenderPluginLoadModelOSG"/>
       <plugin name="dmzRenderPluginObjectOSG"/>
       <plugin name="dmzRenderPluginLogoOSG"/>
-	  <plugin name="dmzRenderPluginLightingOSG"/>
+      <plugin name="dmzRenderPluginLightingOSG"/>
       <!--
          Note: Setting this module to unload="false" stops the crash on exit
                under Linux. This seems to be cause by an "on exit" call in
                OSG.
       -->
-      <plugin name="dmzRenderModuleCoreOSGBasic"/>	  
+      <plugin name="dmzRenderModuleCoreOSGBasic"/>
    </plugins>
    <dmzRenderModuleCoreOSGBasic>
       <plugins>
@@ -31,20 +31,12 @@
       </model>
    </dmzRenderPluginLoadModelOSG>
    <dmzRenderPluginLightingOSG>
-      <maxLights value="8"/>
       <light value="0">
-         <position x="20" y="20" z="20"/>
-         <direction x="20" y="-20" z="0"/>
-         <ambient r="0" g="0" b="0"/>         
-         <diffuse r="0" g="0" b="0"/>
-         <specular r="0" g="0" b="0"/>
+         <position x="0" y="1000" z="0"/>
+         <direction x="0" y="-1.0" z="0"/>
+         <ambient r="0.1" g="0.1" b="0.1"/>         
+         <diffuse r="1" g="1" b="1"/>
+         <specular r="0.1" g="0.1" b="0.1"/>
       </light>
-      <light value="1">
-         <position x="20" y="20" z="20"/>
-         <direction x="20" y="-20" z="0"/>
-         <ambient r="0" g="0.5" b="0"/>         
-         <diffuse r="0" g="0.5" b="0"/>
-         <specular r="0" g="0" b="0"/>
-      </light>	  
    </dmzRenderPluginLightingOSG>
 </dmz>
