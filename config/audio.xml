@@ -3,23 +3,17 @@
    <plugins>
       <plugin name="dmzAudioModuleOpenAL"/>
       <plugin name="dmzAudioModulePortalBasic"/>
-      <plugin name="dmzAudioPluginObject" />
-      <plugin name="dmzAudioPluginEventSimple" />
+      <plugin name="dmzAudioPluginObject"/>
+      <plugin name="dmzAudioPluginEvent"/>
    </plugins>
    <dmzAudioModulePortalBasic>
      <name value="audioportal1"/>
    </dmzAudioModulePortalBasic>
-   <dmzAudioModuleFMOD>
-      <dopplerScale value="1.0"/>
-      <distanceFactor value="1.0"/>
-      <rollOffScale value="1.0"/>
-      <maxChannels value="256"/>
-      <rightHandedCoordinates value="True"/>
-      <forceFullDirectSoundHRTF value="True"/>
-   </dmzAudioModuleFMOD>
-   <dmzAudioPluginEventSimple>
-      <event-type name="Event_Launch" resource="launch-sound"/>
-      <event-type name="Event_Detonation" resource="detonation-sound"/>
-      <event-type name="Event_Collision" resource="collision-sound"/>
-   </dmzAudioPluginEventSimple>
+   <dmzAudioPluginEvent>
+      <event-list>
+         <event-type name="Event_Launch"/>
+         <event-type name="Event_Detonation"/>
+         <event-type name="Event_Collision"/>
+      </event-list>
+   </dmzAudioPluginEvent>
 </dmz>
