@@ -1,8 +1,8 @@
 <dmz>
-<plugins>
+<plugin-list>
    <plugin name="dmzWeaponPluginFixedLauncher" scope="missile"/>
    <plugin name="dmzWeaponPluginLaserBullet" scope="missile"/>
-</plugins>
+</plugin-list>
 <missile>
    <munitions>
       <object-type name="missile"/>

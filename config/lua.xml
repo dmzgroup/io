@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmz>
-<plugins>
+<plugin-list>
    <plugin name="dmzLuaModuleBasic"/>
    <plugin name="dmzLuaPluginReset"/>
-</plugins>
+</plugin-list>
 <dmzLuaPluginTimedReset>
    <time value="0.5"/>
 </dmzLuaPluginTimedReset>

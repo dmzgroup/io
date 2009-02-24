@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <dmz>
-<plugins>
+<plugin-list>
    <plugin name="dmzEntityPluginGroundSimple"/>
    <plugin name="dmzEntityPluginFreeFly" reserve="true"/>
    <plugin name="dmzEntityPluginPortalFollow"/>
@@ -9,7 +9,7 @@
    <plugin name="dmzEntityPluginHorn"/>
    <plugin name="dmzEntityPluginDamage"/>
    <plugin name="dmzEntityPluginDeadTimer"/>
-</plugins>
+</plugin-list>
 <dmzLuaModuleBasic>
    <instance name="dmzEntityPluginFreeFly"/>
 </dmzLuaModuleBasic>

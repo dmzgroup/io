@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmz>
-<plugins>
+<plugin-list>
    <plugin name="dmzNetPluginPacket"/>
    <plugin name="dmzNetPluginRemoteDR"/>
    <plugin name="dmzNetModuleLocalDRBasic"/>
@@ -8,7 +8,7 @@
    <plugin name="dmzNetModulePacketCodecBasic"/>
    <plugin name="dmzNetModulePacketIOHawkNL"/>
    <plugin name="dmzNetModuleAttributeMapBasic"/>
-</plugins>
+</plugin-list>
 <dmzNetModulePacketCodecBasic>
    <header>
       <element type="const" base="uint32" value="2002002"/>
@@ -25,9 +25,9 @@
       <event-type name="Event_Detonation"/>
       <event-type name="Event_Collision"/>
    </packet>
-   <plugins>
+   <plugin-list>
       <plugin name="dmzNetExtPacketCodecObjectBasic"/>
       <plugin name="dmzNetExtPacketCodecEventBasic"/>
-   </plugins>
+   </plugin-list>
 </dmzNetModulePacketCodecBasic>
 </dmz>
