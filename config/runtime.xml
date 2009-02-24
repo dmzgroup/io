@@ -28,6 +28,7 @@
       </render>
    </object-type>
    <object-type name="missile">
+      <timeout value="30" detonate="true"/>
       <net>
          <enum value="3"/>
          <state name="Deactivate" mask="0x010"/>
