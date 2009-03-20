@@ -29,16 +29,12 @@
    <input>
       <channel name="ground"/>
    </input>
+   <offset x="0.0" y="2.5" z="6.5"/>
 </dmzEntityPluginPortalFollow>
 <dmzEntityPluginPortalTether>
    <input>
       <channel name="freefly"/>
    </input>
-</dmzEntityPluginPortalTether>
-<dmzEntityPluginPortalFollow>
-   <offset x="0.0" y="2.5" z="6.5"/>
-</dmzEntityPluginPortalFollow>
-<dmzEntityPluginPortalTether>
    <offset x="0.0" y="2.5" z="6.5"/>
 </dmzEntityPluginPortalTether>
 <dmzEntityPluginDeadTimer>
