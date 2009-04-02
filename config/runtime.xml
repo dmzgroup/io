@@ -5,6 +5,7 @@
       <frequency value="0.0"/>
    </time>
    <state name="Engine_On"/>
+   <state name="Air_Born"/>
    <state name="Horn_On"/>
    <state name="Deactivate"/>
    <state name="Damaged"/>

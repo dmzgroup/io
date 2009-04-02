@@ -12,6 +12,7 @@
       <path value="./assets/"/>
    </search>
    <resource name="logo" file="DMZ.png"/>
+   <resource name="crater" file="Crater.ive"/>
    <resource name="creature" file="Tentacreature.ive"/>
    <resource name="projectile" file="LavaProjectile.ive"/>
    <resource name="red" file="Hoverover_red.ive"/>

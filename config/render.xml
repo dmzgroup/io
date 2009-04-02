@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dmz>
+<plugin-list>
+   <plugin name="dmzRenderModuleIsectOSG"/>
+   <plugin name="dmzRenderModulePortalOSG" scope="render"/>
+   <plugin name="dmzRenderPluginStaticTerrainOSG" scope="terrain"/>
+   <plugin name="dmzRenderPluginObjectOSG"/>
+   <plugin name="dmzRenderPluginLogoOSG"/>
+   <plugin name="dmzRenderPluginLightingOSG" scope="render"/>
+   <!--
+      Note: Setting this module to unload="false" stops the crash on exit
+            under Linux. This seems to be cause by an "on exit" call in
+            OSG.
+   -->
+   <plugin name="dmzRenderModuleCoreOSGBasic" scope="render" platform="win32|macos"/>
+   <plugin name="dmzRenderModuleCoreOSGBasic" scope="render" platform="linux" unload="false"/>
+</plugin-list>
+<render>
    <plugin-list>
-      <plugin name="dmzRenderModuleIsectOSG"/>
-      <plugin name="dmzRenderModulePortalOSG"/>
-      <plugin name="dmzRenderPluginLoadModelOSG"/>
-      <plugin name="dmzRenderPluginObjectOSG"/>
-      <plugin name="dmzRenderPluginLogoOSG"/>
-      <plugin name="dmzRenderPluginLightingOSG"/>
-      <!--
-         Note: Setting this module to unload="false" stops the crash on exit
-               under Linux. This seems to be cause by an "on exit" call in
-               OSG.
-      -->
-      <plugin name="dmzRenderModuleCoreOSGBasic" scope="render" platform="win32|macos"/>
-      <plugin name="dmzRenderModuleCoreOSGBasic" scope="render" platform="linux" unload="false"/>
+      <plugin name="dmzRenderExtViewerOSG"/>
    </plugin-list>
-   <render>
-      <plugin-list>
-         <plugin name="dmzRenderExtViewerOSG"/>
-      </plugin-list>
-      <dmzRenderExtViewerOSG>
-         <window-title value="DMZ: Hoverover"/>
-      </dmzRenderExtViewerOSG>
-   </render>
-   <dmzRenderModulePortalOSG>
-      <visibility fov="60.0" near="1.0" far="32000.0"/>
-   </dmzRenderModulePortalOSG>
-   <dmzRenderPluginLoadModelOSG>
-      <model name="Crater" file="../../assets/io/models/Crater.ive">
-      </model>
-   </dmzRenderPluginLoadModelOSG>
-   <dmzRenderPluginLightingOSG>
-      <light value="0">
-         <position x="0" y="1000" z="0"/>
-         <direction x="0" y="-1.0" z="0"/>
-         <ambient r="0.1" g="0.1" b="0.1"/>         
-         <diffuse r="1" g="1" b="1"/>
-         <specular r="0.1" g="0.1" b="0.1"/>
-      </light>
-   </dmzRenderPluginLightingOSG>
+   <dmzRenderExtViewerOSG>
+      <window-title value="DMZ: Hoverover"/>
+   </dmzRenderExtViewerOSG>
+   <visibility fov="60.0" near="1.0" far="32000.0"/>
+   <light value="0">
+      <position x="0" y="1000" z="0"/>
+      <direction x="0" y="-1.0" z="0"/>
+      <ambient r="0.1" g="0.1" b="0.1"/>         
+      <diffuse r="1" g="1" b="1"/>
+      <specular r="0.1" g="0.1" b="0.1"/>
+   </light>
+</render>
+<terrain>
+   <model resource="crater"/>
+</terrain>
 </dmz>
