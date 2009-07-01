@@ -21,6 +21,7 @@
    </plugin-list>
    <dmzRenderExtViewerOSG>
       <window-title value="DMZ: Hoverover"/>
+      <aa samples="4"/>
    </dmzRenderExtViewerOSG>
    <visibility fov="60.0" near="1.0" far="32000.0"/>
    <light value="0">

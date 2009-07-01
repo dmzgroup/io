@@ -40,5 +40,23 @@
 <dmzEntityPluginDeadTimer>
    <timer value="5.0"/>
 </dmzEntityPluginDeadTimer>
+<keyboard-controller>
+   <controller>
+      <axis id="6" negative="a" positive="d"/>
+      <axis id="6" negative="A" positive="D"/>
+      <axis id="2" negative="w" positive="s"/>
+      <axis id="2" negative="W" positive="S"/>
+      <axis id="8" negative="z" positive="q"/>
+      <axis id="8" negative="Z" positive="Q"/>
+      <axis id="1" negative="leftarrow" positive="rightarrow"/>
+      <axis id="7" negative="uparrow" positive="downarrow"/>
+      <button id="1" key=","/>
+      <button id="2" key="space"/>
+      <button id="3" key="."/>
+      <button id="4" key="enter"/>
+      <button id="5" key="r"/>
+      <scale key="shift" value="0.1" sticky="false"/>
+   </controller>
+</keyboard-controller>
 </dmz>
   
