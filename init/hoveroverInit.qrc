@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="hoverover" >
+    <file>Hoverover-Banner.png</file>
+  </qresource>
+</RCC>

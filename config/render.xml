@@ -17,12 +17,12 @@
 </plugin-list>
 <render>
    <plugin-list>
-      <plugin name="dmzRenderExtViewerOSG"/>
+      <plugin name="dmzRenderExtViewerOSG" scope="viewer"/>
    </plugin-list>
-   <dmzRenderExtViewerOSG>
+   <viewer>
       <window-title value="DMZ: Hoverover"/>
       <aa samples="4"/>
-   </dmzRenderExtViewerOSG>
+   </viewer>
    <visibility fov="60.0" near="1.0" far="32000.0"/>
    <light value="0">
       <position x="0" y="1000" z="0"/>

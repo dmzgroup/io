@@ -1,0 +1,11 @@
+require "lmkQt"
+
+lmkQt.set_name "hoveroverInit"
+lmk.set_type "plugin"
+lmk.add_files {"hoveroverInit.qrc",}
+lmk.add_files {"hoveroverInit.ui",}
+lmk.add_files ({"hoveroverInit.h",}, {src="moc",})
+lmk.add_files {"hoveroverInit.cpp",}
+lmk.add_libs { "dmzXML", "dmzApplication", "dmzKernel", }
+lmkQt.add_libs {"QtCore","QtGui",}
+

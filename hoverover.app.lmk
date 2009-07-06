@@ -1,0 +1,92 @@
+require "app"
+lmk.set_name ("hoveroverapp")
+lmk.add_vars {
+   appName = "Hoverover",
+   majorVersion = "1",
+   minorVersion = "0",
+   bugVersion = "0",
+   releaseType = "test 4",
+   --aboutImage = "./assets/DMZ-Icon.png",
+}
+lmk.add_files ({"version.xml",}, {src="version",})
+lmk.add_files {"Hoverover.app"}
+lmk.add_preqs ({"dmzAudioModuleOpenAL",}, { macos = true })
+lmk.add_preqs ({"dmzAudioModuleFMOD",}, { win32 = true })
+lmk.add_preqs {
+   "hoverover",
+   "dmzArchiveModuleBasic",
+   "dmzArchivePluginAutoLoad",
+   "dmzArchivePluginQuickSave",
+   "dmzArchivePluginObject",
+   "dmzObjectModuleBasic",
+   "dmzObjectPluginTimeout",
+   "dmzEventModuleBasic",
+   "dmzEventModuleCommonBasic",
+   "dmzAudioModulePortalBasic",
+   "dmzAudioPluginObject",
+   "dmzAudioPluginEvent",
+   "dmzInputModuleBasic",
+   "dmzInputPluginChannelSwitch",
+   "dmzInputPluginControllerKey",
+   "dmzInputPluginControllerMacOS",
+   "dmzInputPluginExit",
+   "dmzInputPluginKeyEventToMessage",
+   "dmzNetPluginPacket",
+   "dmzNetPluginRemoteDR",
+   "dmzNetModuleLocalDRBasic",
+   "dmzNetPluginRemoteTimeout",
+   "dmzNetModulePacketCodecBasic",
+   "dmzNetExtPacketCodecObjectBasic",
+   "dmzNetExtPacketCodecEventBasic",
+   "dmzNetModulePacketIOHawkNL",
+   "dmzNetModuleAttributeMapBasic",
+   "dmzRenderModuleIsectOSG",
+   "dmzRenderModulePortalOSG",
+   "dmzRenderPluginStaticTerrainOSG",
+   "dmzRenderPluginObjectOSG",
+   "dmzRenderPluginLogoOSG",
+   "dmzRenderPluginLightingOSG",
+   "dmzRenderModuleCoreOSGBasic",
+   "dmzRenderExtViewerOSG",
+   "dmzEntityPluginGroundSimple",
+   "dmzEntityPluginPortalFollow",
+   "dmzEntityPluginPortalTether",
+   "dmzEntityPluginTeleport",
+   "dmzEntityPluginHorn",
+   "dmzEntityPluginDamage",
+   "dmzEntityPluginDeadTimer",
+   "dmzWeaponPluginFixedLauncher",
+   "dmzWeaponPluginLaserBullet",
+   "dmzLuaModuleBasic",
+   "dmzLuaExtInput",
+   "dmzLuaExtIsect",
+   "dmzLuaExtObject",
+   "dmzLuaExtEvent",
+   "dmzQtExtLuaConsole",
+   "dmzLuaPluginReset",
+}
+app.set_app ("hoverover")
+app.set_plist ("Info.plist")
+app.add_icons {"AppIcon.icns"}
+app.add_config {
+   "config/",
+   "$(localTmpDir)/version.xml",
+}
+app.add_data {
+   "assets/DMZ-Splash.png",
+   "../../assets/io",
+}
+app.add_scripts {
+   "../dmz/scripts/entity/dmzEntityPluginFreeFly.lua",
+   "scripts/",
+}
+lmk.add_vars ({
+   installPaths = {
+      {"QtCore.framework/Versions/4/QtCore", "@executable_path/../Frameworks/Qt/QtCore"},
+      {"QtGui.framework/Versions/4/QtGui", "@executable_path/../Frameworks/Qt/QtGui"},
+      {"QtXml.framework/Versions/4/QtXml", "@executable_path/../Frameworks/Qt/QtXml"},
+      {"QtSvg.framework/Versions/4/QtSvg", "@executable_path/../Frameworks/Qt/QtSvg"},
+      {"QtOpenGL.framework/Versions/4/QtOpenGL", "@executable_path/../Frameworks/Qt/QtOpenGL"},
+   },
+}
+,{opt = true})

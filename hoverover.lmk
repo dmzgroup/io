@@ -1,0 +1,4 @@
+require "qtshell"
+
+qtshell.set_up ("hoverover")
+lmk.add_files ({"hoverover.rc"},{win32 = true})
