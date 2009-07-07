@@ -1,0 +1,59 @@
+<dmz>
+<overlay>
+   <node type="transform" name="logo">
+      <node type="box">
+         <min x="-256.0" y="-67.0"/>
+         <max x="256.0" y="-3.0"/>
+         <texture resource="hoverover logo"/>
+         <depth value="4"/>
+         <color r="1" g="1" b="1" a="0.5"/>
+      </node>
+   </node>
+   <layout node="logo">
+      <x type="relative" value="0.5"/>
+      <y type="relative" value="1.0"/>
+   </layout>
+   <color name="help text color" r="0" g="0" b="0"/>
+   <layout node="help transform">
+      <x type="relative" value="0.5"/>
+      <y type="relative" value="1.0"/>
+   </layout>
+   <node type="transform" name="help transform">
+      <node type="transform" name="help slider">
+         <position x="0" y="330"/>
+         <node type="text">
+            <text>
+
+        - Hoverover Help -
+
+ Right Arrow Key:Turn Right
+  Left Arrow Key:Turn Left
+           w Key:Accelerator
+           s Key:Break
+       Space Key:Fire
+         Tab Key:Toggle Move Mode
+   Comma "," Key:Turbo
+  Period "." Key:Horn
+     Shift-R Key:Reset Lua Runtime
+     Shift-L Key:Open Lua Console
+      Return Key:Start Position
+           ? Key:Toggle Help
+         ESC Key:Quit
+            </text>
+            <position x="-180" y="0"/>
+            <font resource="spectator font"/>
+            <height value="20"/>
+            <color name="help text color"/>
+            <depth value="15"/>
+         </node>
+         <node type="box">
+            <min x="-200" y="-330"/>
+            <max x="200" y="0"/>
+            <color r="1" g="1" b="1" a="0.5"/>
+            <depth value="14"/> 
+         </node>
+      </node>
+   </node>
+</overlay>
+</dmz>
+ 

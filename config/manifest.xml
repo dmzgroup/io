@@ -10,6 +10,7 @@
    <config file="config/simple.xml"/>
    <config file="config/weapon.xml"/>
    <config file="config/lua.xml"/>
+   <config file="config/hoverover_help.xml"/>
    <color>
       <type text="Blue">
          <config file="config/hoverover_blue.xml"/>

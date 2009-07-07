@@ -11,6 +11,12 @@
       <path value="../../assets/io/sounds"/>
       <path value="./assets/"/>
    </search>
+   <search name="font">
+      <path value="../../assets/io/fonts"/>
+      <path value="./assets/"/>
+   </search>
+   <resource name="spectator font" file="data-latin.ttf" path="font"/>
+   <resource name="hoverover logo" file="hoverover_overlay.png"/>
    <resource name="logo" file="DMZ.png"/>
    <resource name="crater" file="Crater.ive"/>
    <resource name="creature" file="Tentacreature.ive"/>

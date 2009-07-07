@@ -3,6 +3,7 @@
 <plugin-list>
    <plugin name="dmzRenderModuleIsectOSG"/>
    <plugin name="dmzRenderModulePortalOSG" scope="render"/>
+   <plugin name="dmzRenderModuleOverlayOSG" scope="overlay"/>
    <plugin name="dmzRenderPluginStaticTerrainOSG" scope="terrain"/>
    <plugin name="dmzRenderPluginObjectOSG"/>
    <plugin name="dmzRenderPluginLogoOSG"/>

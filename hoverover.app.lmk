@@ -5,7 +5,7 @@ lmk.add_vars {
    majorVersion = "1",
    minorVersion = "0",
    bugVersion = "0",
-   releaseType = "test 4",
+   releaseType = "test 1",
    --aboutImage = "./assets/DMZ-Icon.png",
 }
 lmk.add_files ({"version.xml",}, {src="version",})
