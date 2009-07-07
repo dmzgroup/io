@@ -2,6 +2,8 @@
 #include <dmzApplication.h>
 #include <dmzAppShellExt.h>
 #include <dmzCommandLine.h>
+#include <dmzQtConfigRead.h>
+#include <dmzQtConfigWrite.h>
 #include <dmzRuntimeConfig.h>
 #include <dmzRuntimeConfigToTypesBase.h>
 #include <dmzRuntimeSession.h>
@@ -11,8 +13,9 @@
 #include <dmzXMLUtil.h>
 
 #include <QtCore/QUrl>
-#include <QtGui/QDesktopServices>
 #include <QtGui/QCloseEvent>
+#include <QtGui/QDesktopServices>
+#include <QtGui/QDesktopWidget>
 
 using namespace dmz;
 
@@ -27,11 +30,12 @@ static const String ResolutionName ("resolution.value");
 static const String ScreenName ("screen.value");
 static const String AAName ("aa.value");
 static const String PortName ("port.value");
+static const String GeometryName ("geometry");
 
 static void
 local_populate_color_table (
       AppShellInitStruct &init,
-      HoveroverInit &ci,
+      HoveroverInit &hInit,
       ConfigTable &colorTable) {
 
    Config colorList;
@@ -47,7 +51,7 @@ local_populate_color_table (
 
          if (value) {
 
-            ci.ui.colorCombo->addItem (value.get_buffer ());
+            hInit.ui.colorCombo->addItem (value.get_buffer ());
             Config *ptr = new Config (color);
 
             if (ptr && !colorTable.store (value, ptr)) {
@@ -63,7 +67,7 @@ local_populate_color_table (
 static void
 local_populate_resolution_table (
       AppShellInitStruct &init,
-      HoveroverInit &ci,
+      HoveroverInit &hInit,
       ConfigTable &rezTable) {
 
    Config rezList;
@@ -79,7 +83,7 @@ local_populate_resolution_table (
 
          if (value) {
 
-            ci.ui.resolutionCombo->addItem (value.get_buffer ());
+            hInit.ui.resolutionCombo->addItem (value.get_buffer ());
 
             Config *ptr = new Config (rez);
 
@@ -94,7 +98,7 @@ local_populate_resolution_table (
 
 
 static void
-local_restore_session (AppShellInitStruct &init, HoveroverInit &ci) {
+local_restore_session (AppShellInitStruct &init, HoveroverInit &hInit) {
 
    Config session = get_session_config (HoveroverName, init.app.get_context ());
 
@@ -102,26 +106,38 @@ local_restore_session (AppShellInitStruct &init, HoveroverInit &ci) {
 
    if (Color) {
 
-      const int Index = ci.ui.colorCombo->findText (Color.get_buffer ());
-      if (Index >= 0) { ci.ui.colorCombo->setCurrentIndex (Index); }
+      const int Index = hInit.ui.colorCombo->findText (Color.get_buffer ());
+      if (Index >= 0) { hInit.ui.colorCombo->setCurrentIndex (Index); }
    }
 
    const String Resolution = config_to_string (ResolutionName, session);
 
    if (Resolution) {
 
-      const int Index = ci.ui.resolutionCombo->findText (Resolution.get_buffer ());
-      if (Index >= 0) { ci.ui.resolutionCombo->setCurrentIndex (Index); }
+      const int Index = hInit.ui.resolutionCombo->findText (Resolution.get_buffer ());
+      if (Index >= 0) { hInit.ui.resolutionCombo->setCurrentIndex (Index); }
    }
 
    const Int32 Screen = config_to_int32 (ScreenName, session, -1);
-   if (Screen >= 0) { ci.ui.screenBox->setValue (Screen); }
+   if (Screen >= 0) { hInit.ui.screenBox->setValue (Screen); }
 
    const Int32 Samples = config_to_int32 (AAName, session, -1);
-   if (Samples >= 0) { ci.ui.aaBox->setValue (Samples); }
+   if (Samples >= 0) { hInit.ui.aaBox->setValue (Samples); }
 
    const Int32 Port = config_to_int32 (PortName, session, -1);
-   if (Port > 0) { ci.ui.portBox->setValue (Port); }
+   if (Port > 0) { hInit.ui.portBox->setValue (Port); }
+
+   Config geometry;
+
+   if (session.lookup_config (GeometryName, geometry)) {
+
+      hInit.restoreGeometry (config_to_qbytearray (geometry));
+   }
+   else {
+
+      QRect rect = QApplication::desktop ()->availableGeometry (&hInit);
+      hInit.move(rect.center () - hInit.rect ().center ());
+   }
 }
 
  
@@ -148,14 +164,14 @@ local_add_config (const String &Scope, AppShellInitStruct &init) {
 static void
 local_setup_resolution (
       AppShellInitStruct &init,
-      HoveroverInit &ci,
+      HoveroverInit &hInit,
       ConfigTable &rezTable) {
 
    Config global;
 
    init.app.get_global_config (global);
 
-   Config *ptr = rezTable.lookup (qPrintable (ci.ui.resolutionCombo->currentText ()));
+   Config *ptr = rezTable.lookup (qPrintable (hInit.ui.resolutionCombo->currentText ()));
 
    if (ptr) {
 
@@ -179,21 +195,19 @@ local_setup_resolution (
 
    if (ScreenScope) {
 
-      const String Screen = qPrintable (ci.ui.screenBox->cleanText ());
+      const String Screen = qPrintable (hInit.ui.screenBox->cleanText ());
 
       global.store_attribute (ScreenScope, Screen);
    }
-
 
    String AAScope = config_to_string ("aa.scope", init.manifest);
 
    if (AAScope) {
 
-      const String Samples = qPrintable (ci.ui.aaBox->cleanText ());
+      const String Samples = qPrintable (hInit.ui.aaBox->cleanText ());
 
       global.store_attribute (AAScope, Samples);
    }
-
 }
 
 
@@ -286,6 +300,8 @@ HoveroverInit::closeEvent (QCloseEvent * event) {
       const Int32 Port = ui.portBox->value ();
       session.store_attribute (PortName, String::number (Port));
 
+      session.add_config (qbytearray_to_config ("geometry", saveGeometry ()));
+
       set_session_config (init.app.get_context (), session);
    }
 
@@ -298,7 +314,7 @@ extern "C" {
 DMZ_PLUGIN_FACTORY_LINK_SYMBOL void
 dmz_init_hoverover (AppShellInitStruct &init) {
 
-   HoveroverInit ci (init);
+   HoveroverInit hInit (init);
 
    if (init.VersionFile) {
 
@@ -306,31 +322,31 @@ dmz_init_hoverover (AppShellInitStruct &init) {
 
       if (xml_to_version (init.VersionFile, version, &init.app.log)) {
 
-         QString vs = ci.windowTitle ();
+         QString vs = hInit.windowTitle ();
          vs += " (v";
          const String Tmp = version.get_version ().get_buffer ();
          if (Tmp) { vs += Tmp.get_buffer (); }
          else { vs += "Unknown"; }
          vs += ")";
 
-         ci.setWindowTitle (vs);
+         hInit.setWindowTitle (vs);
       }
    }
 
    ConfigTable colorTable;
 
-   local_populate_color_table (init, ci, colorTable);
+   local_populate_color_table (init, hInit, colorTable);
 
    ConfigTable rezTable;
 
-   local_populate_resolution_table (init, ci, rezTable);
+   local_populate_resolution_table (init, hInit, rezTable);
 
-   local_restore_session (init, ci);
+   local_restore_session (init, hInit);
 
-   ci.show ();
-   ci.raise ();
+   hInit.show ();
+   hInit.raise ();
 
-   while (ci.isVisible ()) {
+   while (hInit.isVisible ()) {
 
       QApplication::sendPostedEvents (0, -1);
       QApplication::processEvents (QEventLoop::WaitForMoreEvents);
@@ -341,7 +357,7 @@ dmz_init_hoverover (AppShellInitStruct &init) {
       local_add_config ("config", init);
 
       Config *colorPtr = colorTable.lookup (
-         qPrintable (ci.ui.colorCombo->currentText ()));
+         qPrintable (hInit.ui.colorCombo->currentText ()));
 
       if (colorPtr) {
 
@@ -365,9 +381,9 @@ dmz_init_hoverover (AppShellInitStruct &init) {
 
       if (!init.app.is_error ()) {
 
-         local_setup_resolution (init, ci, rezTable);
+         local_setup_resolution (init, hInit, rezTable);
 
-         local_set_port (ci.ui.portBox->value (), init);
+         local_set_port (hInit.ui.portBox->value (), init);
       }
    }
 }

@@ -6,6 +6,6 @@ lmk.add_files {"hoveroverInit.qrc",}
 lmk.add_files {"hoveroverInit.ui",}
 lmk.add_files ({"hoveroverInit.h",}, {src="moc",})
 lmk.add_files {"hoveroverInit.cpp",}
-lmk.add_libs { "dmzXML", "dmzApplication", "dmzKernel", }
+lmk.add_libs {"dmzQtUtil", "dmzXML", "dmzApplication", "dmzKernel", }
 lmkQt.add_libs {"QtCore","QtGui",}
 
