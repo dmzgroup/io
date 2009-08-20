@@ -3,6 +3,7 @@
 <plugin-list>
    <plugin name="dmzLuaModuleBasic"/>
    <plugin name="dmzLuaPluginReset"/>
+   <plugin name="dmzLuaExtRuntime"/>
 </plugin-list>
 <dmzLuaPluginTimedReset>
    <time value="0.5"/>
