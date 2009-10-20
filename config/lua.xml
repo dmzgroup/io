@@ -9,14 +9,14 @@
    <time value="0.5"/>
 </dmzLuaPluginTimedReset>
 <dmzLuaModuleBasic>
-   <extensions>
+   <plugin-list>
       <plugin name="dmzLuaExtInput"/>
       <plugin name="dmzLuaExtIsect"/>
       <plugin name="dmzLuaExtObject"/>
       <plugin name="dmzLuaExtEvent"/>
       <plugin name="dmzLuaExtOverlay"/>
       <plugin name="dmzQtExtLuaConsole"/>
-   </extensions>
+   </plugin-list>
    <instance name="hoveroverOverlay"/>
 </dmzLuaModuleBasic>
 </dmz>
