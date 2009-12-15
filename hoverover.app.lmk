@@ -10,79 +10,14 @@ lmk.add_vars {
 }
 lmk.add_files ({"version.xml",}, {src="version",})
 lmk.add_files {"Hoverover.app"}
-lmk.add_preqs ({
-   "dmzAudioModuleOpenAL",
-   "dmzInputPluginControllerMacOS",
-}, { macos = true })
-lmk.add_preqs ({
-   "dmzAudioModuleFMOD",
-   "dmzInputPluginControllerWin32",
-}, { win32 = true })
-lmk.add_preqs {
-   "hoverover",
-   "hoveroverInit",
-   "dmzArchiveModuleBasic",
-   "dmzArchivePluginAutoLoad",
-   "dmzArchivePluginQuickSave",
-   "dmzArchivePluginObject",
-   "dmzObjectModuleBasic",
-   "dmzObjectPluginTimeout",
-   "dmzEventModuleBasic",
-   "dmzEventModuleCommonBasic",
-   "dmzAudioModulePortalBasic",
-   "dmzAudioPluginObject",
-   "dmzAudioPluginEvent",
-   "dmzInputModuleBasic",
-   "dmzInputPluginChannelSwitch",
-   "dmzInputPluginControllerKey",
-   "dmzInputPluginExit",
-   "dmzInputPluginKeyEventToMessage",
-   "dmzNetPluginPacket",
-   "dmzNetPluginRemoteDR",
-   "dmzNetModuleLocalDRBasic",
-   "dmzNetPluginRemoteTimeout",
-   "dmzNetModulePacketCodecBasic",
-   "dmzNetExtPacketCodecObjectBasic",
-   "dmzNetExtPacketCodecEventBasic",
-   "dmzNetModulePacketIOHawkNL",
-   "dmzNetModuleAttributeMapBasic",
-   "dmzRenderModuleIsectOSG",
-   "dmzRenderModulePortalOSG",
-   "dmzRenderPluginStaticTerrainOSG",
-   "dmzRenderPluginObjectOSG",
-   "dmzRenderPluginLogoOSG",
-   "dmzRenderPluginLightingOSG",
-   "dmzRenderModuleCoreOSGBasic",
-   "dmzRenderExtViewerOSG",
-   "dmzEntityPluginGroundSimple",
-   "dmzEntityPluginPortalFollow",
-   "dmzEntityPluginPortalTether",
-   "dmzEntityPluginTeleport",
-   "dmzEntityPluginHorn",
-   "dmzEntityPluginDamage",
-   "dmzEntityPluginDeadTimer",
-   "dmzWeaponPluginFixedLauncher",
-   "dmzWeaponPluginLaserBullet",
-   "dmzLuaModuleBasic",
-   "dmzLuaExtInput",
-   "dmzLuaExtIsect",
-   "dmzLuaExtObject",
-   "dmzLuaExtEvent",
-   "dmzQtUtil",
-   "dmzQtExtLuaConsole",
-   "dmzLuaPluginReset",
-}
+lmk.add_preqs {"hoverover", "hoveroverInit",}
 app.set_app ("hoverover")
+app.build_preqs {"config",}
 app.set_plist ("Info.plist")
 app.add_icons {"AppIcon.icns"}
-app.add_config {
-   "config/",
-   "$(localTmpDir)/version.xml",
-}
-app.add_data {
-   "assets/DMZ-Splash.png",
-   "../../assets/io",
-}
+app.add_config {"config/",}
+app.copy_config {"$(localTmpDir)/version.xml",}
+app.add_data {"assets/DMZ-Splash.png", "../../assets/io",}
 app.add_scripts {
    "../dmz/scripts/entity/dmzEntityPluginFreeFly.lua",
    "scripts/",
