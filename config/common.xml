@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmz>
-<dmzFileCacheLocal>
-   <path value="../../assets/ioRaceway/textures"/>
-   <path value="../../assets/models/"/>
-   <path value="../dmz/scripts/entity"/>
-   <path value="./scripts"/>
-</dmzFileCacheLocal>
 <plugin-list>
    <plugin name="dmzArchiveModuleBasic"/>
    <plugin name="dmzArchivePluginAutoLoad"/>
