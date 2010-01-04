@@ -1,7 +1,7 @@
 #include "hoveroverInit.h"
 #include <dmzApplication.h>
 #include <dmzAppShellExt.h>
-#include <dmzCommandLine.h>
+#include <dmzFoundationCommandLine.h>
 #include <dmzQtConfigRead.h>
 #include <dmzQtConfigWrite.h>
 #include <dmzRuntimeConfig.h>
@@ -10,7 +10,7 @@
 #include <dmzRuntimePluginFactoryLinkSymbol.h>
 #include <dmzRuntimeVersion.h>
 #include <dmzTypesHashTableStringTemplate.h>
-#include <dmzXMLUtil.h>
+#include <dmzFoundationXMLUtil.h>
 
 #include <QtCore/QUrl>
 #include <QtGui/QCloseEvent>
