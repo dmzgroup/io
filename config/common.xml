@@ -11,7 +11,7 @@
    <plugin name="dmzEventModuleCommonBasic"/>
    <!-- <plugin name="dmzObjectPluginDump"/> -->
    <!-- <plugin name="dmzEventPluginDump"/> -->
-   <!-- <plugin name="dmzPluginTermExit"/> -->
+   <!-- <plugin name="dmzPluginConsole"/> -->
 </plugin-list>
 <dmzArchivePluginObject>
    <archive>
