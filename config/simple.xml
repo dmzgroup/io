@@ -9,6 +9,7 @@
    <plugin name="dmzEntityPluginHorn"/>
    <plugin name="dmzEntityPluginDamage"/>
    <plugin name="dmzEntityPluginDeadTimer"/>
+   <plugin name="dmzEntityModulePortalBasic"/>
 </plugin-list>
 <dmzLuaModuleBasic>
    <instance name="dmzEntityPluginFreeFly"/>
