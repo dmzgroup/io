@@ -17,10 +17,8 @@
    </channel>
 </dmzInputPluginKeyEventToMessage>
 <dmzInputPluginChannelSwitch>
-   <switch>
-      <channel name="ground"/>
-      <channel name="freefly"/>
-   </switch>
+   <channel name="ground"/>
+   <channel name="freefly"/>
 </dmzInputPluginChannelSwitch>
 <dmzInputPluginControllerMacOS>
    <controller deviceId="2" name="wingman">
