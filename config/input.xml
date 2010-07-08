@@ -2,7 +2,8 @@
 <dmz>
 <plugin-list>
    <plugin name="dmzInputModuleBasic"/>
-   <plugin name="dmzInputPluginChannelSwitch"/>
+   <plugin name="dmzInputPluginChannelSwitch" scope="input-switch"/>
+   <plugin name="dmzInputPluginChannelRules" scope="input-switch"/>
    <plugin name="dmzInputPluginControllerKey" scope="keyboard-controller"/>
    <plugin name="dmzInputPluginControllerMacOS" platform="macos"/>
    <plugin name="dmzInputPluginControllerWin32" platform="win32"/>
@@ -16,10 +17,10 @@
       </converter>
    </channel>
 </dmzInputPluginKeyEventToMessage>
-<dmzInputPluginChannelSwitch>
-   <channel name="ground"/>
+<input-switch>
+   <channel name="ground" default="True"/>
    <channel name="freefly"/>
-</dmzInputPluginChannelSwitch>
+</input-switch>
 <dmzInputPluginControllerMacOS>
    <controller deviceId="2" name="wingman">
 <!-- device="WingMan Cordless Gamepad" name="wingman" -->
